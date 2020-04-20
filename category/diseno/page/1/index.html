@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>diseño – Pruebas WP</title><link rel="dns-prefetch" href="//s.w.org"><link rel="stylesheet" id="wp-block-library-css" href="https://rubenmedios.github.io/wordpress/wp-includes/css/dist/block-library/style.min.css" media="all"><link rel="stylesheet" id="twentytwenty-style-css" href="https://rubenmedios.github.io/wordpress/wp-content/themes/twentytwenty/style.css" media="all"><style id="twentytwenty-style-inline-css">
+.color-accent,.color-accent-hover:hover,.color-accent-hover:focus,:root .has-accent-color,.has-drop-cap:not(:focus):first-letter,.wp-block-button.is-style-outline,a { color: #cd2653; }blockquote,.border-color-accent,.border-color-accent-hover:hover,.border-color-accent-hover:focus { border-color: #cd2653; }button:not(.toggle),.button,.faux-button,.wp-block-button__link,.wp-block-file .wp-block-file__button,input[type="button"],input[type="reset"],input[type="submit"],.bg-accent,.bg-accent-hover:hover,.bg-accent-hover:focus,:root .has-accent-background-color,.comment-reply-link { background-color: #cd2653; }.fill-children-accent,.fill-children-accent * { fill: #cd2653; }body,.entry-title a,:root .has-primary-color { color: #000000; }:root .has-primary-background-color { background-color: #000000; }cite,figcaption,.wp-caption-text,.post-meta,.entry-content .wp-block-archives li,.entry-content .wp-block-categories li,.entry-content .wp-block-latest-posts li,.wp-block-latest-comments__comment-date,.wp-block-latest-posts__post-date,.wp-block-embed figcaption,.wp-block-image figcaption,.wp-block-pullquote cite,.comment-metadata,.comment-respond .comment-notes,.comment-respond .logged-in-as,.pagination .dots,.entry-content hr:not(.has-background),hr.styled-separator,:root .has-secondary-color { color: #6d6d6d; }:root .has-secondary-background-color { background-color: #6d6d6d; }pre,fieldset,input,textarea,table,table *,hr { border-color: #dcd7ca; }caption,code,code,kbd,samp,.wp-block-table.is-style-stripes tbody tr:nth-child(odd),:root .has-subtle-background-background-color { background-color: #dcd7ca; }.wp-block-table.is-style-stripes { border-bottom-color: #dcd7ca; }.wp-block-latest-posts.is-grid li { border-top-color: #dcd7ca; }:root .has-subtle-background-color { color: #dcd7ca; }body:not(.overlay-header) .primary-menu > li > a,body:not(.overlay-header) .primary-menu > li > .icon,.modal-menu a,.footer-menu a, .footer-widgets a,#site-footer .wp-block-button.is-style-outline,.wp-block-pullquote:before,.singular:not(.overlay-header) .entry-header a,.archive-header a,.header-footer-group .color-accent,.header-footer-group .color-accent-hover:hover { color: #cd2653; }.social-icons a,#site-footer button:not(.toggle),#site-footer .button,#site-footer .faux-button,#site-footer .wp-block-button__link,#site-footer .wp-block-file__button,#site-footer input[type="button"],#site-footer input[type="reset"],#site-footer input[type="submit"] { background-color: #cd2653; }.header-footer-group,body:not(.overlay-header) #site-header .toggle,.menu-modal .toggle { color: #000000; }body:not(.overlay-header) .primary-menu ul { background-color: #000000; }body:not(.overlay-header) .primary-menu > li > ul:after { border-bottom-color: #000000; }body:not(.overlay-header) .primary-menu ul ul:after { border-left-color: #000000; }.site-description,body:not(.overlay-header) .toggle-inner .toggle-text,.widget .post-date,.widget .rss-date,.widget_archive li,.widget_categories li,.widget cite,.widget_pages li,.widget_meta li,.widget_nav_menu li,.powered-by-wordpress,.to-the-top,.singular .entry-header .post-meta,.singular:not(.overlay-header) .entry-header .post-meta a { color: #6d6d6d; }.header-footer-group pre,.header-footer-group fieldset,.header-footer-group input,.header-footer-group textarea,.header-footer-group table,.header-footer-group table *,.footer-nav-widgets-wrapper,#site-footer,.menu-modal nav *,.footer-widgets-outer-wrapper,.footer-top { border-color: #dcd7ca; }.header-footer-group table caption,body:not(.overlay-header) .header-inner .toggle-wrapper::before { background-color: #dcd7ca; }
+</style><link rel="stylesheet" id="twentytwenty-print-style-css" href="https://rubenmedios.github.io/wordpress/wp-content/themes/twentytwenty/print.css" media="print"><script src="https://rubenmedios.github.io/wordpress/wp-content/themes/twentytwenty/assets/js/index.js" async></script><script>document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );</script></head><body class="archive category category-diseno category-4 wp-embed-responsive enable-search-modal has-no-pagination showing-comments show-avatars footer-top-hidden elementor-default">
+
+		<a class="skip-link screen-reader-text" href="#site-content">Saltar al contenido</a>
+		<header id="site-header" class="header-footer-group" role="banner"><div class="header-inner section-inner">
+
+				<div class="header-titles-wrapper">
+
+					
+						<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+							<span class="toggle-inner">
+								<span class="toggle-icon">
+									<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewbox="0 0 23 23"><path d="M38.710696,48.0601792 L43,52.3494831 L41.3494831,54 L37.0601792,49.710696 C35.2632422,51.1481185 32.9839107,52.0076499 30.5038249,52.0076499 C24.7027226,52.0076499 20,47.3049272 20,41.5038249 C20,35.7027226 24.7027226,31 30.5038249,31 C36.3049272,31 41.0076499,35.7027226 41.0076499,41.5038249 C41.0076499,43.9839107 40.1481185,46.2632422 38.710696,48.0601792 Z M36.3875844,47.1716785 C37.8030221,45.7026647 38.6734666,43.7048964 38.6734666,41.5038249 C38.6734666,36.9918565 35.0157934,33.3341833 30.5038249,33.3341833 C25.9918565,33.3341833 22.3341833,36.9918565 22.3341833,41.5038249 C22.3341833,46.0157934 25.9918565,49.6734666 30.5038249,49.6734666 C32.7048964,49.6734666 34.7026647,48.8030221 36.1716785,47.3875844 C36.2023931,47.347638 36.2360451,47.3092237 36.2726343,47.2726343 C36.3092237,47.2360451 36.347638,47.2023931 36.3875844,47.1716785 Z" transform="translate(-20 -31)"></path></svg></span>
+								<span class="toggle-text">Buscar</span>
+							</span>
+						</button>
+
+					
+					<div class="header-titles">
+
+						<div class="site-title faux-heading"><a href="https://rubenmedios.github.io/wordpress/">Pruebas WP</a></div><div class="site-description">Otro sitio realizado con WordPress</div>
+					</div>
+
+					<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+						<span class="toggle-inner">
+							<span class="toggle-icon">
+								<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="26" height="7" viewbox="0 0 26 7"><path fill-rule="evenodd" d="M332.5,45 C330.567003,45 329,43.4329966 329,41.5 C329,39.5670034 330.567003,38 332.5,38 C334.432997,38 336,39.5670034 336,41.5 C336,43.4329966 334.432997,45 332.5,45 Z M342,45 C340.067003,45 338.5,43.4329966 338.5,41.5 C338.5,39.5670034 340.067003,38 342,38 C343.932997,38 345.5,39.5670034 345.5,41.5 C345.5,43.4329966 343.932997,45 342,45 Z M351.5,45 C349.567003,45 348,43.4329966 348,41.5 C348,39.5670034 349.567003,38 351.5,38 C353.432997,38 355,39.5670034 355,41.5 C355,43.4329966 353.432997,45 351.5,45 Z" transform="translate(-329 -38)"></path></svg></span>
+							<span class="toggle-text">Menú</span>
+						</span>
+					</button>
+
+				</div>
+
+				<div class="header-navigation-wrapper">
+
+					
+							<nav class="primary-menu-wrapper" aria-label="Horizontal" role="navigation"><ul class="primary-menu reset-list-style"><li id="menu-item-68" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68"><a href="/wordpress/">Inicio</a></li>
+<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="https://rubenmedios.github.io/wordpress/acerca/">Acerca</a></li>
+<li id="menu-item-67" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="https://rubenmedios.github.io/wordpress/pagina-ejemplo/">Página de ejemplo</a></li>
+
+								</ul></nav><div class="header-toggles hide-no-js">
+
+						
+							<div class="toggle-wrapper search-toggle-wrapper">
+
+								<button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+									<span class="toggle-inner">
+										<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewbox="0 0 23 23"><path d="M38.710696,48.0601792 L43,52.3494831 L41.3494831,54 L37.0601792,49.710696 C35.2632422,51.1481185 32.9839107,52.0076499 30.5038249,52.0076499 C24.7027226,52.0076499 20,47.3049272 20,41.5038249 C20,35.7027226 24.7027226,31 30.5038249,31 C36.3049272,31 41.0076499,35.7027226 41.0076499,41.5038249 C41.0076499,43.9839107 40.1481185,46.2632422 38.710696,48.0601792 Z M36.3875844,47.1716785 C37.8030221,45.7026647 38.6734666,43.7048964 38.6734666,41.5038249 C38.6734666,36.9918565 35.0157934,33.3341833 30.5038249,33.3341833 C25.9918565,33.3341833 22.3341833,36.9918565 22.3341833,41.5038249 C22.3341833,46.0157934 25.9918565,49.6734666 30.5038249,49.6734666 C32.7048964,49.6734666 34.7026647,48.8030221 36.1716785,47.3875844 C36.2023931,47.347638 36.2360451,47.3092237 36.2726343,47.2726343 C36.3092237,47.2360451 36.347638,47.2023931 36.3875844,47.1716785 Z" transform="translate(-20 -31)"></path></svg><span class="toggle-text">Buscar</span>
+									</span>
+								</button>
+
+							</div>
+
+							
+						</div>
+						
+				</div>
+
+			</div>
+
+			<div class="search-modal cover-modal header-footer-group" data-modal-target-string=".search-modal">
+
+	<div class="search-modal-inner modal-inner">
+
+		<div class="section-inner">
+
+			<form role="search" aria-label="Buscar:" method="get" class="search-form" action="https://rubenmedios.github.io/wordpress/">
+	<label for="search-form-1">
+		<span class="screen-reader-text">Buscar:</span>
+		<input type="search" id="search-form-1" class="search-field" placeholder="Buscar …" value="" name="s"></label>
+	<input type="submit" class="search-submit" value="Buscar"></form>
+
+			<button class="toggle search-untoggle close-search-toggle fill-children-current-color" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+				<span class="screen-reader-text">Cerrar la búsqueda</span>
+				<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16"><polygon fill="" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102"></polygon></svg></button>
+
+		</div>
+
+	</div>
+
+</div>
+
+		</header><div class="menu-modal cover-modal header-footer-group" data-modal-target-string=".menu-modal">
+
+	<div class="menu-modal-inner modal-inner">
+
+		<div class="menu-wrapper section-inner">
+
+			<div class="menu-top">
+
+				<button class="toggle close-nav-toggle fill-children-current-color" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".menu-modal">
+					<span class="toggle-text">Cerrar el menú</span>
+					<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16"><polygon fill="" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102"></polygon></svg></button>
+
+				
+					<nav class="mobile-menu" aria-label="Móvil" role="navigation"><ul class="modal-menu reset-list-style"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68"><div class="ancestor-wrapper"><a href="/wordpress/">Inicio</a></div></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><div class="ancestor-wrapper"><a href="https://rubenmedios.github.io/wordpress/acerca/">Acerca</a></div></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><div class="ancestor-wrapper"><a href="https://rubenmedios.github.io/wordpress/pagina-ejemplo/">Página de ejemplo</a></div></li>
+
+						</ul></nav></div>
+
+			<div class="menu-bottom">
+
+				
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<main id="site-content" role="main"><header class="archive-header has-text-align-center header-footer-group"><div class="archive-header-inner section-inner medium">
+
+									<h1 class="archive-title"><span class="color-accent">Categoría:</span> diseño</h1>
+				
+				
+			</div>
+
+		</header><article class="post-85 post type-post status-publish format-standard has-post-thumbnail hentry category-css category-diseno" id="post-85"><header class="entry-header has-text-align-center"><div class="entry-header-inner section-inner medium">
+
+		
+			<div class="entry-categories">
+				<span class="screen-reader-text">Categorías</span>
+				<div class="entry-categories-inner">
+					<a href="https://rubenmedios.github.io/wordpress/category/css/" rel="category tag">css</a> <a href="https://rubenmedios.github.io/wordpress/category/diseno/" rel="category tag">diseño</a>				</div>
+			</div>
+
+			<h2 class="entry-title heading-size-1"><a href="https://rubenmedios.github.io/wordpress/2020/04/20/layout-in-css/">Layout in CSS</a></h2>
+		<div class="post-meta-wrapper post-meta-single post-meta-single-top">
+
+			<ul class="post-meta"><li class="post-author meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Autor de la entrada</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewbox="0 0 18 20"><path fill="" d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z"></path></svg></span>
+						<span class="meta-text">
+							Por <a href="https://rubenmedios.github.io/wordpress/author/rubenmedios/">rubenmedios</a>						</span>
+					</li>
+										<li class="post-date meta-wrapper">
+						<span class="meta-icon">
+							<span class="screen-reader-text">Fecha de publicación</span>
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewbox="0 0 18 19"><path fill="" d="M4.60069444,4.09375 L3.25,4.09375 C2.47334957,4.09375 1.84375,4.72334957 1.84375,5.5 L1.84375,7.26736111 L16.15625,7.26736111 L16.15625,5.5 C16.15625,4.72334957 15.5266504,4.09375 14.75,4.09375 L13.3993056,4.09375 L13.3993056,4.55555556 C13.3993056,5.02154581 13.0215458,5.39930556 12.5555556,5.39930556 C12.0895653,5.39930556 11.7118056,5.02154581 11.7118056,4.55555556 L11.7118056,4.09375 L6.28819444,4.09375 L6.28819444,4.55555556 C6.28819444,5.02154581 5.9104347,5.39930556 5.44444444,5.39930556 C4.97845419,5.39930556 4.60069444,5.02154581 4.60069444,4.55555556 L4.60069444,4.09375 Z M6.28819444,2.40625 L11.7118056,2.40625 L11.7118056,1 C11.7118056,0.534009742 12.0895653,0.15625 12.5555556,0.15625 C13.0215458,0.15625 13.3993056,0.534009742 13.3993056,1 L13.3993056,2.40625 L14.75,2.40625 C16.4586309,2.40625 17.84375,3.79136906 17.84375,5.5 L17.84375,15.875 C17.84375,17.5836309 16.4586309,18.96875 14.75,18.96875 L3.25,18.96875 C1.54136906,18.96875 0.15625,17.5836309 0.15625,15.875 L0.15625,5.5 C0.15625,3.79136906 1.54136906,2.40625 3.25,2.40625 L4.60069444,2.40625 L4.60069444,1 C4.60069444,0.534009742 4.97845419,0.15625 5.44444444,0.15625 C5.9104347,0.15625 6.28819444,0.534009742 6.28819444,1 L6.28819444,2.40625 Z M1.84375,8.95486111 L1.84375,15.875 C1.84375,16.6516504 2.47334957,17.28125 3.25,17.28125 L14.75,17.28125 C15.5266504,17.28125 16.15625,16.6516504 16.15625,15.875 L16.15625,8.95486111 L1.84375,8.95486111 Z"></path></svg></span>
+						<span class="meta-text">
+							<a href="https://rubenmedios.github.io/wordpress/2020/04/20/layout-in-css/">20 abril, 2020</a>
+						</span>
+					</li>
+										<li class="post-comment-link meta-wrapper">
+						<span class="meta-icon">
+							<svg class="svg-icon" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewbox="0 0 19 19"><path d="M9.43016863,13.2235931 C9.58624731,13.094699 9.7823475,13.0241935 9.98476849,13.0241935 L15.0564516,13.0241935 C15.8581553,13.0241935 16.5080645,12.3742843 16.5080645,11.5725806 L16.5080645,3.44354839 C16.5080645,2.64184472 15.8581553,1.99193548 15.0564516,1.99193548 L3.44354839,1.99193548 C2.64184472,1.99193548 1.99193548,2.64184472 1.99193548,3.44354839 L1.99193548,11.5725806 C1.99193548,12.3742843 2.64184472,13.0241935 3.44354839,13.0241935 L5.76612903,13.0241935 C6.24715123,13.0241935 6.63709677,13.4141391 6.63709677,13.8951613 L6.63709677,15.5301903 L9.43016863,13.2235931 Z M3.44354839,14.766129 C1.67980032,14.766129 0.25,13.3363287 0.25,11.5725806 L0.25,3.44354839 C0.25,1.67980032 1.67980032,0.25 3.44354839,0.25 L15.0564516,0.25 C16.8201997,0.25 18.25,1.67980032 18.25,3.44354839 L18.25,11.5725806 C18.25,13.3363287 16.8201997,14.766129 15.0564516,14.766129 L10.2979143,14.766129 L6.32072889,18.0506004 C5.75274472,18.5196577 4.89516129,18.1156602 4.89516129,17.3790323 L4.89516129,14.766129 L3.44354839,14.766129 Z"></path></svg></span>
+						<span class="meta-text">
+							<a href="https://rubenmedios.github.io/wordpress/2020/04/20/layout-in-css/#respond">No hay comentarios<span class="screen-reader-text"> en Layout in CSS</span></a>						</span>
+					</li>
+					
+			</ul></div>
+
+		
+	</div>
+
+</header><figure class="featured-media"><div class="featured-media-inner section-inner medium">
+
+			<img width="800" height="348" src="https://rubenmedios.github.io/wordpress/wp-content/uploads/2020/04/layout-in-css.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://rubenmedios.github.io/wordpress/wp-content/uploads/2020/04/layout-in-css.png 800w,https://rubenmedios.github.io/wordpress/wp-content/uploads/2020/04/layout-in-css-300x131.png 300w,https://rubenmedios.github.io/wordpress/wp-content/uploads/2020/04/layout-in-css-768x334.png 768w" sizes="(max-width: 800px) 100vw, 800px"></div>
+
+	</figure><div class="post-inner thin ">
+
+		<div class="entry-content">
+
+			
+<p><em>This post (</em><a href="https://sargalias.com/blog/layout-in-css/" target="_blank" rel="noreferrer noopener"><em>Layout in CSS</em></a><em>) was originally published on </em><a href="https://sargalias.com" target="_blank" rel="noreferrer noopener"><em>Sargalias</em></a><em>.</em></p>
+
+
+
+<hr class="wp-block-separator"><p>This article is about how to create a good layout in CSS. We’ll tackle layout in CSS from a few angles, specifically:</p>
+
+
+
+<ul><li>Things you must know to be able to handle layout in CSS effectively.</li><li>Positioning between a container and its components.</li><li>Positioning elements belonging to a component.</li><li>Positioning sibling components.</li></ul><p>The goal is to show you how to do layout in CSS in a way that’s organised well for the lifetime of the project. Following these methods, you should encounter very few (if any) cascade issues in the future. The main way to manage this is by keeping components separate and decoupled from each other in terms of positioning.</p>
+
+
+
+<p>So on we go.</p>
+
+
+
+<hr class="wp-block-separator"><h1 id="1a89">Important considerations</h1>
+
+
+
+<p>Before we even start looking at the layout methods, there are some important things you need to know. We’ll mention them briefly here, but you really should know these concepts fairly well for the purposes of this article. Some good resources are listed to learn more about them if you need to.</p>
+
+
+
+<h1 id="6151">CSS components</h1>
+
+
+
+<p>A component is basically HTML and CSS that goes together and is counted as a standalone entity. For example a <em>button</em> would be a component. A <em>widget</em> with all the elements it contains and its functionality may be another component.</p>
+
+
+
+<p><mark>The benefit of components is that they are </mark><mark><strong>reusable</strong></mark><mark> and they can be placed anywhere on the website and still </mark><mark><em>look right</em></mark><mark>.</mark></p>
+
+
+
+<p>Also, if you structure your CSS well, you never have to worry about any unrelated CSS rules overriding anything in a component. You can be confident that your component will stay looking correct forever, unless you specifically make a change to it. This also goes for everything else you do in the project. A component will never be affected unless you deliberately intend to change it.</p>
+
+
+
+<p>To learn more about how to code with components in mind, have a look at <a href="http://getbem.com/" target="_blank" rel="noreferrer noopener">BEM</a>. Other ways of getting the same effect are things like using <a href="https://github.com/css-modules/css-modules" target="_blank" rel="noreferrer noopener">CSS Modules</a>, among others.</p>
+
+
+
+<h1 id="ad8d">Margin-collapsing</h1>
+
+
+
+<p>If you’re going to think about layout, it is absolutely essential to know how margin-collapsing works. If you don’t know it off by heart, here are the articles to look at:</p>
+
+
+
+<ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank" rel="noreferrer noopener">Mastering margin-collapsing (MDN)</a></li><li><a href="https://css-tricks.com/what-you-should-know-about-collapsing-margins/" target="_blank" rel="noreferrer noopener">What you should know about collapsing margins (CSS-Tricks)</a></li></ul><p>Keep it in mind any time you’re working on layout.</p>
+
+
+
+<h1 id="4286">Padding vs margin</h1>
+
+
+
+<p><em>padding</em> is part of the element. Things like the border and background depend on it.</p>
+
+
+
+<p><em>margin</em> is the minimum empty space away from the element.</p>
+
+
+
+<h1 id="d53b">Margin-top vs margin-bottom vs both</h1>
+
+
+
+<h2 id="b170">Notes</h2>
+
+
+
+<p><code>margin-top</code> vs <code>margin-bottom</code> is only a discussion you need to worry about when you’re styling <em>base styles</em>. <em>Base styles</em> are basically default styles with <em>tag selectors</em> and low <em>specificity</em>.</p>
+
+
+
+<p>The classic example is a <a href="https://wordpress.org/" target="_blank" rel="noreferrer noopener">WordPress</a> blog post page. You probably don’t want to be styling that based on <em>classes</em>. It would be better if you just styled the elements to have the correct styles by default.</p>
+
+
+
+<p>On the other hand, if you’re positioning things within component, it really doesn’t matter whether you use <code>margin-bottom</code> or <code>margin-top</code>. It’s all contained within that component and it won’t affect anything else, so you can use whatever works.</p>
+
+
+
+<h2 id="06dc">Margin-top</h2>
+
+
+
+<p><code>margin-top</code> is best for when you need to style an element <strong>based on what element came before it</strong>.</p>
+
+
+
+<p>For example, imagine that you want every image in a blog post to be <code>2rem</code> below other elements by default, but in the case where an image is followed by another image, you want the space between them to only be <code>1rem</code>.</p>
+
+
+
+<p>In this case, you would have to use the selector <code>img + img</code>. Since combinator selectors match the last element, you would be forced to use <code>margin-top</code>.</p>
+
+
+
+<p><strong>Example</strong></p>
+
+
+
+<pre class="wp-block-preformatted">img { margin-top: 2rem; }<br>img + img { margin-top: 1rem; }</pre>
+
+
+
+<h2 id="c85e">Margin-bottom</h2>
+
+
+
+<p><code>margin-bottom</code> is better when something requires a specific <code>margin-bottom</code>, regardless of what element follows it.</p>
+
+
+
+<p>For example, if you want every <code>h2</code> to have a minimum space underneath it of <code>2rem</code>, you would use the <code>margin-bottom</code>property.</p>
+
+
+
+<p><strong>Example</strong></p>
+
+
+
+<pre class="wp-block-preformatted">h2 { margin-bottom: 2rem; }</pre>
+
+
+
+<h2 id="6f83">Both</h2>
+
+
+
+<p>Using both is also acceptable. That way you can set minimum spacing both above and below each particular element.</p>
+
+
+
+<p>As long as you understand how <em>margin-collapsing</em> works, there won’t be any problem.</p>
+
+
+
+<pre class="wp-block-preformatted">h2 {<br>  margin-top: 1rem;<br>  margin-bottom: 2rem;<br>}img {<br>  margin-top: 2rem; // must have at least 2rem space above it<br>  margin-bottom: 1rem;<br>}img + img {<br>  /*<br>    Has only 1rem above it when it's after another image.<br>    Margin collapsing results in just 1rem space between the two images,<br>    even though there is a margin-bottom of 1rem and margin-top of 1 rem.<br>   */<br>  margin-top: 1rem;<br>}</pre>
+
+
+
+<h1 id="2005">Variables and standardization</h1>
+
+
+
+<p>One very important principle to mention about layout in general, is that things should be as standardized as possible and you should have variables for common things.</p>
+
+
+
+<p>For example, ideally you shouldn’t be coming up with <code>margin</code> values based on what you think looks right at that moment. Generally, it would be much better to have your standard <code>margin</code> or <em>general space</em> value in a variable. Then you can just use that every time you need a <code>margin</code>.</p>
+
+
+
+<p>Of course you can have multiple values, that’s fine as well. Overall your website will feel much more consistent than having random values everywhere.</p>
+
+
+
+<h2 id="1b71">Refactoring into variables</h2>
+
+
+
+<p>You should try to refactor everything you can into global variables. My general rule of thumb is if it’s used 3 times or more anywhere on the site, then I make a variable for it.</p>
+
+
+
+<p>The disclaimer is that they also have to be <em>related</em> and it has to make sense for those things to be refactored into a single variable. It’s not enough that they have the same value. Those values need to have the same <em>meaning</em>.</p>
+
+
+
+<p>For example, imagine that you have multiple declarations of <code>margin: 3rem;</code>, as well as multiple declarations of <code>padding: 3rem;</code>in different places. These two values don’t necessarily <em>mean</em> the same thing. One might be your common value for <em>section margin</em>, whereas the other one might be the <code>padding</code> within some <em>hero</em> components. Those two values shouldn’t be under the same variable, because tomorrow you might want to change your <em>section margin</em> without changing the other value. It’s important that you refactor things into variables which <strong>semantically mean the same thing</strong>. Don’t refactor things because they happen to have the same value by coincidence. Refactor things that <em>are</em> the same value, both in value and meaning.</p>
+
+
+
+<h2 id="1cc1">Where to place variables</h2>
+
+
+
+<p>I put every single variable in a specific file at the top of the project. That way they are all in one place and it’s easy to change the look of the entire website just by changing the values of variables.</p>
+
+
+
+<h2 id="9464">Things to refactor</h2>
+
+
+
+<p>The variables include almost everything, such as:</p>
+
+
+
+<ul><li>Spacings</li><li>Borders</li><li>Font-sizes</li><li>Colors</li><li>Shadows</li><li>Etc.</li></ul><p>Refactoring things into variables is a no-brainer for CSS today. It allows you to make changes very quickly and helps keep things consistent. Particularly for layout, this consistency can really help out. It’s much easier to space things if you can use a pre-set value, than to have to calculate correct spacing for elements every time.</p>
+
+
+
+<hr class="wp-block-separator"><h1 id="387e">Layout</h1>
+
+
+
+<p>Understanding the concepts above, we can now move onto layout. So how do you go about creating the best layout in CSS?</p>
+
+
+
+<p>As mentioned above, broadly speaking, there are 3 scenarios to consider:</p>
+
+
+
+<ul><li>Positioning between a container and its components.</li><li>Positioning elements belonging to a component.</li><li>Positioning sibling components.</li></ul><p>The first one is probably the trickiest one, so let’s start with that.</p>
+
+
+
+<h1 id="afca">Positioning components within containers</h1>
+
+
+
+<p>Here are what (in my experience) are the best methods for positioning components within containers.</p>
+
+
+
+<h2 id="86f7">The best layout method — Decoupled containers and components</h2>
+
+
+
+<h2 id="881e">What we want</h2>
+
+
+
+<ul><li>Components within a container shouldn’t care about their positioning at all.</li><li>The container should position the components it contains.This also means that containers are in charge of spacing their components away from each other properly. E.g. by using CSS grid.</li><li>Optionally, the components can fill up the entire area that the container provides. This isn’t necessary, but it does mean that things are even more decoupled (and more fluid in terms of responsive design). However it doesn’t make sense for all components to be able to stretch more than a certain size.</li></ul><h2 id="1bb7">Why it’s important</h2>
+
+
+
+<p>In short, if a component never cares about where it’s positioned, <strong>it is completely decoupled from its container</strong>. All a component has to do is care about itself.</p>
+
+
+
+<p>This means that: <strong>Any component or container can be swapped out at any time and everything will still look perfect. No need to change any CSS whatsoever.</strong></p>
+
+
+
+<p>In comparison, if a component needs to change its <code>margin</code> and such depending on where it is and what’s around it, then it will never be completely <strong>reusable</strong>. It will always need to CSS changes before it’s placed anywhere.</p>
+
+
+
+<h1 id="e117">Ways of achieving decoupled containers and components</h1>
+
+
+
+<h2 id="bab6">Using grid</h2>
+
+
+
+<p><code>grid</code> provides <em>gutters</em> and allows for exact positioning of child elements. So if <code>grid</code> is a reasonable <code>display</code> mode to use, it’s very easy to achieve decoupled containers and components with it.</p>
+
+
+
+<p><strong>Pros</strong></p>
+
+
+
+<ul><li>Very good for positioning child components in a pattern.</li><li>Has <em>gutters</em> (the <code>gap</code> property), so can position child components without them needing a <code>margin</code>.</li></ul><p><strong>Cons</strong></p>
+
+
+
+<ul><li>If it’s not positioning things in a pattern, it will require some specific targeting, probably resulting in messy CSS. E.g. quite complicated<code>grid-template-columns</code> and / or <code>grid-template-rows</code>.</li><li>To use the <code>grid-template-areas</code> property, child components will need to have a complimentary property set on them.</li></ul><p><strong>Implementation</strong></p>
+
+
+
+<p>Implementation of this method is extremely simple.</p>
+
+		</div>
+
+	</div>
+
+	<div class="section-inner">
+		
+	</div>
+
+	
+</article></main><footer id="site-footer" role="contentinfo" class="header-footer-group"><div class="section-inner">
+
+					<div class="footer-credits">
+
+						<p class="footer-copyright">©
+							2020							<a href="https://rubenmedios.github.io/wordpress/">Pruebas WP</a>
+						</p>
+
+						<p class="powered-by-wordpress">
+							<a href="https://ve.wordpress.org/">
+								Funciona gracias a WordPress							</a>
+						</p>
+
+					</div>
+
+					<a class="to-the-top" href="#site-header">
+						<span class="to-the-top-long">
+							Ir arriba <span class="arrow" aria-hidden="true">↑</span>						</span>
+						<span class="to-the-top-short">
+							Subir <span class="arrow" aria-hidden="true">↑</span>						</span>
+					</a>
+
+				</div>
+
+			</footer><script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script></body></html>
